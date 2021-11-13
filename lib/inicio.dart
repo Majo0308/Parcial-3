@@ -1,4 +1,6 @@
 import 'package:contamales_programacion/Editar/edit_ingresos.dart';
+import 'Editar/edit_ingresos.dart';
+import 'package:contamales_programacion/Editar/edit_ingresos.dart';
 import 'package:contamales_programacion/Historiales/gastos.dart';
 import 'package:contamales_programacion/Historiales/navdrawer.dart';
 import 'package:contamales_programacion/Historiales/prestamos.dart';
@@ -135,7 +137,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => PrestamosR(),
+                              builder: (context) => GastosE(),
                             ),
                           );
                     print('Button pressed ...');

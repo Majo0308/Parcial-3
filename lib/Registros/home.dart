@@ -1,146 +1,80 @@
-/*import 'package:contamales_programacion/Historiales/navdrawer.dart';
+import 'package:http/http.dart';
+import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:contamales_programacion/ApiService/get.dart';
-import 'package:contamales_programacion/ApiService/post.dart';
-import 'ingresos_p.dart';
-import 'prestamos_p.dart';
-import 'gastos_p.dart';
-class Home extends StatelessWidget {
+import 'dart:convert';
+import 'package:contamales_programacion/main.dart';
+import 'package:flutter/cupertino.dart';
+import 'dart:async';
+import 'package:http/http.dart' as http;
+import 'package:contamales_programacion/flutter_flow/flutter_flow/flutter_flow_widgets.dart';
 
-  static const String routeName = '/home';
-
+import 'package:contamales_programacion/inicio.dart';
+class GastosE extends StatelessWidget {
+  const GastosE(
+    
+      {Key key,
+      this.id,
+      this.tipo,
+      this.etiqueta,
+      this.descripcion,
+      this.monto})
+      : super(key: key);
+  final int id;
+  final int tipo;
+  final String etiqueta;
+  final String descripcion;
+  final int monto;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("ContaMales"),
+        centerTitle: true,
+        title: const Text("Ingresos"),
       ),
-      drawer: NavDrawer(),
-      backgroundColor: Color(0xFFB834E0),
-      body: Center(
-        widthFactor: 200.0,
-        child:Column(
-        children: [
-          Container(
-            width: 1000.0,
-            height: 300,
-                        
-            decoration: new BoxDecoration( 
+      body: SizedBox(
+        height: MediaQuery.of(context).size.height * 0.8,
+        child: ListView(
+          shrinkWrap: true,
+          children: [
             
-            ),/*
-              image: new DecorationImage(fit: BoxFit.fill, image: NetworkImage('https://w0.peakpx.com/wallpaper/416/130/HD-wallpaper-ajolote-xd.jpg'),),
-          ),*/),
-          Padding(
-  padding: EdgeInsetsDirectional.fromSTEB(0, 27, 0, 0),
-  child: Container(
-    width: double.infinity,
-    height: 52,
-    decoration: BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(8),
-    ),
-    child: Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(15, 0, 15, 0),
-      child: Row(
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          InkWell(
-            
-            child: Icon(
-              Icons.search,
-              color: Colors.grey,
-              size: 24,
-            ),
-          ),
-          Expanded(
-            child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 2),
-              child: TextFormField(
-
-                obscureText: false,
-                decoration: InputDecoration(
-                  hintText: 'Search artist, maker, department...',
-                 
-                  enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0x00000000),
-                      width: 1,
-                    ),
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(4.0),
-                      topRight: Radius.circular(4.0),
-                    ),
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0x00000000),
-                      width: 1,
-                    ),
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(4.0),
-                      topRight: Radius.circular(4.0),
-                    ),
-                  ),
-                ),
+              FFButtonWidget(
+              text:'Editar',
+              onPressed: () async {
+                print("queso");
                 
-              ),
-            ),
-          )
-        ],
-      ),
-    ),
-  ),
-),
-
-          
-          GestureDetector(
-          onTap: (){ Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => Ingresos()),
-            );},
-          child: Container(
-            child: ClipRRect(
-              borderRadius:BorderRadius.circular(0.0),
-            child: Image.asset('assets/images/preview.jpg',
-                width: 1000.0, height: 80.0),
-            ),
-            
-          ),
-          ),
-          GestureDetector(
-          onTap: (){ Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => Ingresos()),
-            );},
-          child: Container(
-            child: ClipRRect(
-              borderRadius:BorderRadius.circular(0.0),
-            child: Image.asset('assets/images/preview1.jpg',
-                width: 1000.0, height: 80.0),
-            ),
-            
-          ),
-          ),
-          GestureDetector(
-          onTap: (){ Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => Page_post_data()),
-            );},
-          child: Container(
-            child: ClipRRect(
-              borderRadius:BorderRadius.circular(0.0),
-            child: Image.asset('assets/images/preview2.jpg',
-                width: 1000.0, height: 80.0),
-            ),
-            
-          ),
-          ),
-          ]
+                Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => HomePageWidget(),
+                            ),
+                          );
+                    print('Button pressed ...');
+             
+                
+              },),
+              
+          ],
         ),
-        
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
+    
   }
-
 }
-*/
+
+class Relevancia_get extends StatefulWidget {
+  const Relevancia_get({Key key}) : super(key: key);
+
+  @override
+  _Relevancia_getState createState() => _Relevancia_getState();
+}
+
+class _Relevancia_getState extends State<Relevancia_get> {
+  
+
+  bool vacio = false;
+  int lim = 100;
+  @override
+  Widget build(BuildContext context) {
+    
+  }
+}

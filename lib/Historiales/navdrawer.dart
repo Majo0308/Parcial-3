@@ -30,22 +30,22 @@ class NavDrawer extends StatelessWidget {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.input),
+              leading: Icon(Icons.home),
               title: Text('Inicio'),
               onTap: () => {},
             ),
             ListTile(
-              leading: Icon(Icons.verified_user),
+              leading: Icon(Icons.money_off),
               title: Text('Gastos'),
               onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>Relevancia_get())),
             ),
             ListTile(
-              leading: Icon(Icons.settings),
+              leading: Icon(Icons.money_sharp),
               title: Text('Ingresos'),
               onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>Ingreso())),
             ),
             ListTile(
-              leading: Icon(Icons.border_color),
+              leading: Icon(Icons.person),
               title: Text('Préstamos'),
               onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>PrestamosR())),
             ),

@@ -13,8 +13,8 @@ import 'package:contamales_programacion/Editar/plantillaedicion.dart';
 
 import 'package:contamales_programacion/Editar/regist.dart';
 
-class GastosH extends StatelessWidget {
-  const GastosH(
+class GastosE extends StatelessWidget {
+  const GastosE(
     
       {Key key,
       this.id,
@@ -28,25 +28,6 @@ class GastosH extends StatelessWidget {
   final String etiqueta;
   final String descripcion;
   final int monto;
-  @override
-  Widget build(BuildContext context) {
-    
-    
-  }
-}
-
-class Relevancia_get extends StatefulWidget {
-  const Relevancia_get({Key key}) : super(key: key);
-
-  @override
-  _Relevancia_getState createState() => _Relevancia_getState();
-}
-
-class _Relevancia_getState extends State<Relevancia_get> {
-  
-
-  bool vacio = false;
-  int lim = 100;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,10 +62,10 @@ class _Relevancia_getState extends State<Relevancia_get> {
                 color: Color(0xFFE7A0B5),
                 textStyle: FlutterFlowTheme.subtitle2.override(
                   fontFamily: 'Poppins',
-                  color: Colors.white,
+                  color: Colors.pink,
                 ),
                 borderSide: BorderSide(
-                  color: Colors.transparent,
+                  color: Colors.white,
                   width: 0,
                 ),
                 borderRadius: 0,
@@ -122,5 +103,24 @@ class _Relevancia_getState extends State<Relevancia_get> {
         ),
       ),
     );
+    
+  }
+}
+
+class Relevancia_get extends StatefulWidget {
+  const Relevancia_get({Key key}) : super(key: key);
+
+  @override
+  _Relevancia_getState createState() => _Relevancia_getState();
+}
+
+class _Relevancia_getState extends State<Relevancia_get> {
+  
+
+  bool vacio = false;
+  int lim = 100;
+  @override
+  Widget build(BuildContext context) {
+    
   }
 }

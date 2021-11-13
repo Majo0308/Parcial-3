@@ -2,6 +2,7 @@ import 'package:contamales_programacion/flutter_flow/flutter_flow/flutter_flow_i
 import 'package:contamales_programacion/flutter_flow/flutter_flow/flutter_flow_theme.dart';
 import 'package:contamales_programacion/flutter_flow/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:contamales_programacion/inicio.dart';
 import 'package:contamales_programacion/ApiService/get.dart';
 import 'package:contamales_programacion/ApiService/post.dart';
 
@@ -201,6 +202,12 @@ class _HomePageWidgetState extends State<GastosR> {
 
                   Map datos = await ServiceApi.postCreateRegistro(
                       tipo, etiqueta, descripcion, monto);
+                   Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => HomePageWidget(),
+                            ),
+                          );
               },
               text: 'Ingresar Gasto',
               options: FFButtonOptions(
