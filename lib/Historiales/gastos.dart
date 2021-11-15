@@ -1,4 +1,6 @@
 // ignore_for_file: camel_case_types
+import 'dart:ffi';
+
 import 'package:contamales_programacion/Registros/ingresos_p.dart';
 import 'package:http/http.dart';
 import 'dart:convert';
@@ -133,7 +135,7 @@ class _Relevancia_getState extends State<Relevancia_get> {
       var jsonData = jsonDecode(response.body);
       List<dynamic> resultados=[]; 
       for(int i=0; i<jsonData.length; i++) {
-          if( jsonData[i]["tipo"] == 1){
+          if( jsonData[i]["tipo"] == 0){
             resultados.add(jsonData[i]);
           }
       }
@@ -147,22 +149,14 @@ class _Relevancia_getState extends State<Relevancia_get> {
   bool vacio = false;
   int lim = 100;
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text("Gastos"),
-      ),
-      body: SizedBox(
-        height: MediaQuery.of(context).size.height * 0.8,
-        child: ListView(
-          shrinkWrap: true,
-          children: [
 
-            FFButtonWidget(
-              text:'Generar Registros',
-              onPressed: () async {
-                print("queso");
+  void initState() {
+    super.initState();
+    CargarDatos();
+  }
+  void CargarDatos()async{
+  
+                print("LLamando Datos");
                
                 //Map post1= await ServiceApi.postCreateUser("si", "no");
                 List<dynamic> datos = await getData();
@@ -172,22 +166,23 @@ class _Relevancia_getState extends State<Relevancia_get> {
                 return  
                   widgetsListView = datos;
                 });
-              },
-              options: FFButtonOptions(
-                width: 1000,
-                height: 80,
-                color: Color(0xFFE7A0B5),
-                textStyle: FlutterFlowTheme.subtitle2.override(
-                  fontFamily: 'Poppins',
-                  color: Colors.white,
-                ),
-                borderSide: BorderSide(
-                  color: Colors.transparent,
-                  width: 0,
-                ),
-                borderRadius: 0,
-              ),
-            ),
+              
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.pink,
+        centerTitle: true,
+        title: const Text("Historial de Gastos"),
+      ),
+      body: SizedBox(
+        height: MediaQuery.of(context).size.height * 0.8,
+        child: ListView(
+          shrinkWrap: true,
+          children: [
+
+
 
             ListView.builder(
               shrinkWrap: true,

@@ -1,8 +1,8 @@
 import 'package:contamales_programacion/Historiales/gastos.dart';
 import 'package:contamales_programacion/Historiales/ingresos.dart';
-import 'package:contamales_programacion/Registros/prestamos_p.dart';
+import 'package:contamales_programacion/Historiales/prestamos.dart';
 import 'package:flutter/material.dart';
-import 'package:contamales_programacion/Registros/gastos_p.dart';
+
 class NavDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -42,12 +42,12 @@ class NavDrawer extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.money_sharp),
               title: Text('Ingresos'),
-              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>Ingreso())),
+              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>Ingresos_get())),
             ),
             ListTile(
               leading: Icon(Icons.person),
               title: Text('Préstamos'),
-              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>PrestamosR())),
+              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>Prestamos_get())),
             ),
             /*ListTile(
               leading: Icon(Icons.exit_to_app),
